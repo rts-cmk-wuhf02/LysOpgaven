@@ -16,3 +16,4 @@ Philips Hue npm pakke
 
 Sider med ansigtsgenkendelse API'er
     https://rapidapi.com/blog/top-facial-recognition-apis/
+    
