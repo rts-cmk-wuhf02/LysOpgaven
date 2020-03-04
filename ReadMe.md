@@ -28,5 +28,9 @@ Der bliver knapper på siden
     den tredje knap hedder oplæg og gør lyset violet
     den fjerde knap hedder code along og gør lyset gult
     den femte knap hedder færdig for i dag og den slukker lyset
-    hvis jeg har mere tid tilbage laver jeg det så den gør det automatisk efter tiden
+
+    hvis jeg har mere tid tilbage går jeg over listen nedenfor
+        laver jeg det så den gør det automatisk efter tiden
+        ændrer femte knappen til at gå hurtigt over en farve array før den slukker lyset
+        
 
