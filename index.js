@@ -1,14 +1,23 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     //----------------------------henter fra APIet------------------------------
-    /*
-    fetch("https://<bridge ip address>/api/username/lights/1", {
-
+    fetch("https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state", {
+        method: "PUT",
+        header: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+                hue:30000
+            })
     })
         .then(response => response.json())
         .then(function(result){
             console.log(result)
+            // console.log("on: " + result.on)
+            // console.log("sat: " + result.sat)
+            // console.log("bri: " + result.bri)
+            // console.log("hue: " + result.hue)
         })
-        .catch(error => console.error(error))*/
+        .catch(error => console.error(error))
 
     //----------------------------buttons---------------------------------------
     let body = document.querySelector("body");

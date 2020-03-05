@@ -24,10 +24,20 @@ Inga
 
 Der bliver knapper på siden
     den første knap hedder start og gør lyset blåt
+        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
+        {"on":true, "sat":304, "bri":154,"hue":46920}
     den anden knap hedder pause og gør lyset rødt
+        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
+        {"on":true, "sat":154, "bri":154,"hue":65535}
     den tredje knap hedder oplæg og gør lyset violet
+        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
+        {"on":true, "sat":254, "bri":174,"hue":56656}
     den fjerde knap hedder code along og gør lyset gult
+        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
+        {"on":true, "sat":354, "bri":144,"hue":10000}
     den femte knap hedder færdig for i dag og den slukker lyset
+        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state/on
+        {"on":false}
 
     hvis jeg har mere tid tilbage går jeg over listen nedenfor
         laver jeg det så den gør det automatisk efter tiden
