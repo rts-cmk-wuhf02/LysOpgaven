@@ -4,7 +4,7 @@ body{
     background-color: #24cf06;
 }
 #wrapper{
-    max-width:300px;
+    max-width:400px;
     margin:0 auto;
     margin-top:10px;
     background-color: whitesmoke;
@@ -50,4 +50,15 @@ button{
 }
 .Code-Along{
     background-color: #f0c91d;
+}
+
+.currentTime, .message{
+    text-align: center;
+    font-size:35px;
+    font-family: 'Permanent Marker', cursive;
+    color:#24cf06;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: black;
+    text-decoration: underline black 2px;
+    margin:7px 0;
 }
