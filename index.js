@@ -68,10 +68,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
         var OplægOn = document.querySelector(".Oplæg").classList.contains("OplægOn");
 
         //tells the light what color to be based on the message
-        if(CodeAlongOn === true){
+        if(CodeAlongOn === true && message === "Skoletid"){
             body.style.backgroundColor="#f0c91d";
             fetching(10000, 84, true);
-        }else if(OplægOn === true){
+        }else if(OplægOn === true && message === "Skoletid"){
             body.style.backgroundColor="#ce09d1";
             fetching(56656, 90, true);
         }else if(message === "Skoletid"){
