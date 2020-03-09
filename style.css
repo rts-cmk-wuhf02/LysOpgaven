@@ -3,6 +3,7 @@ body{
     padding:0;
     background-color: #24cf06;
 }
+
 #wrapper{
     max-width:400px;
     margin:0 auto;
@@ -10,6 +11,7 @@ body{
     background-color: whitesmoke;
     border:solid 2px black;
 }
+
 h1{
     font-family: 'Permanent Marker', cursive;
     font-size:50px;
@@ -20,11 +22,13 @@ h1{
     text-align: center;
     margin:0;
 }
+
 .button-wrapper{
     display: flex;
     justify-content: space-evenly;
     flex-direction: column;
 }
+
 button{
     font-family: 'Fredoka One', cursive;
     font-size:25px;
@@ -36,20 +40,18 @@ button{
     -webkit-text-stroke-color: black;
     cursor: pointer;
 }
-.Skoletid{
-    background-color: #1414cc;
-}
-.Pause{
-    background-color: #d11f0b;
-}
+
 .Oplæg{
     background-color: #ce09d1;
 }
-.Færdig{
-    background-color: #000;
-}
+
 .Code-Along{
     background-color: #f0c91d;
+}
+
+.OplægOn, .CodeAlongOn{
+    text-decoration: underline black 2px;
+    border:solid 5px black;
 }
 
 .currentTime, .message{
