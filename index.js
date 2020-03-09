@@ -52,12 +52,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let day = today.getDay();
         if(day === 1 && time >= "13:30" || day === 5 && time >= "13:30" ){
         //1 = monday, 5 = friday
-            message = "Færdig for i dag"
+            message = "Færdig for i dag";
+            //console.log(time)
+            //console.log(day)
         }else if(day >= 2 && day <= 4 && time >= "15:10"){
-            message = "Færdig for i dag"
+            message = "Færdig for i dag";
         }else if(day === 6 || day === 0){
         //6 = saturday, 0 = sunday
-            message = "Det er weekend"
+            message = "Det er weekend";
         }
 
         document.querySelector(".Code-Along").addEventListener("click", ()=>{
@@ -95,7 +97,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             body.style.backgroundColor="#000";
             fetching(56656, 90, false);
         }
-    
+
         //shows the relevant message
         document.querySelector(".message").innerHTML = message;
     }, 500);
