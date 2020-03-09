@@ -22,25 +22,26 @@ Sider med ansigtsgenkendelse API'er
 ---------------------------------------------------------------------------------------------
 Inga
 
-Der bliver knapper på siden
-    den første knap hedder start og gør lyset blåt
-        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
-        {"on":true, "sat":304, "bri":154,"hue":46920}
-    den anden knap hedder pause og gør lyset rødt
-        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
-        {"on":true, "sat":154, "bri":154,"hue":65535}
-    den tredje knap hedder oplæg og gør lyset violet
-        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
-        {"on":true, "sat":254, "bri":174,"hue":56656}
-    den fjerde knap hedder code along og gør lyset gult
-        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state
-        {"on":true, "sat":354, "bri":144,"hue":10000}
-    den femte knap hedder færdig for i dag og den slukker lyset
-        https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12/state/on
-        {"on":false}
+nu er der kun 2 knapper på siden (oplæg og code along)
+    resten kommer på de rigtige tidspunkter
+
+    nu starter det blå lys klokken 08:10 og starter igen efter hver pause
+        fetching(46920, 84, true);
+
+    nu starter det røde lys da det er pause tid
+        fetching(65535, 80, true);
+
+    en af mine knapper hedder oplæg og gør lyset violet
+        fetching(56656, 90, true);
+
+    den anden knap hedder code along og gør lyset gult
+        fetching(10000, 84, true);
+
+    klokken 13:30 på mandag og fredag, klokken 15:10 de andre dage og om weekenderne slukker lyset selv
+        fetching(56656, 90, false);
+
 
     hvis jeg har mere tid tilbage går jeg over listen nedenfor
-        laver jeg det så den gør det automatisk efter tiden
         ændrer femte knappen til at gå hurtigt over en farve array før den slukker lyset
         
 
