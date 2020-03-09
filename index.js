@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", ()=>{
     let pauses = [
-        {pauseStart:"8:10", pauseSlut:"9:40", besked:"Skoletid"},//ikke pause
-        {pauseStart:"9:40", pauseSlut:"10:0", besked:"Pause"},
-        {pauseStart:"10:0", pauseSlut:"11:30", besked:"Skoletid"},//ikke pause
-        {pauseStart:"11:30", pauseSlut:"12:0", besked:"Pause"},
-        {pauseStart:"12:0", pauseSlut:"13:30", besked:"Skoletid"},//ikke pause
-        {pauseStart:"13:30", pauseSlut:"13:40", besked:"Pause"},
+        {pauseStart:"8:10", pauseSlut:"9:39", besked:"Skoletid"},//ikke pause
+        {pauseStart:"9:40", pauseSlut:"09:59", besked:"Pause"},
+        {pauseStart:"10:0", pauseSlut:"11:29", besked:"Skoletid"},//ikke pause
+        {pauseStart:"11:30", pauseSlut:"11:59", besked:"Pause"},
+        {pauseStart:"12:0", pauseSlut:"13:29", besked:"Skoletid"},//ikke pause
+        {pauseStart:"13:30", pauseSlut:"13:39", besked:"Pause"},
         {pauseStart:"13:40", pauseSlut:"15:10", besked:"Skoletid"}//ikke pause
     ];
 
@@ -20,13 +20,11 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let today = new Date();
         let time = today.getHours() + ":" + today.getMinutes();
         let currentTime = timeInOneNbr(today.getHours(), today.getMinutes());
-        // let message = "Skoletid"; 
-        var message; 
-        document.querySelector(".currentTime").innerHTML =  "Klokken er " + time; 
-        
+        let message; 
+
         for (const pause of pauses) { 
             let start = pause.pauseStart.split(":");
-            let startMinutes = timeInOneNbr(...start);
+            let startMinutes = timeInOneNbr(...start); 
             let end = pause.pauseSlut.split(":");
             let endMinutes = timeInOneNbr(...end);
 
@@ -36,6 +34,19 @@ document.addEventListener("DOMContentLoaded", ()=>{
                     break;
             }
         }
+
+        //get the time to show 04 instead of 4
+        function addZero(i) {
+            if (i < 10) {
+              i = "0" + i;
+            }
+            return i;
+        }
+        let h = addZero(today.getHours());
+        let m = addZero(today.getMinutes());
+        let showTime = h + ":" + m;
+        document.querySelector(".currentTime").innerHTML =  "Klokken er " + showTime; 
+        
 
         //changes the message when you are outside school time(weekends and done for the day)
         let day = today.getDay();
