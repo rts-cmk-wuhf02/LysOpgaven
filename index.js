@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             let end = pause.pauseSlut.split(":");
             let endMinutes = timeInOneNbr(...end);
 
-            //checks for a break
+            //checks my pauses array
             if(currentTime >= startMinutes && currentTime <= endMinutes){ 
                 message = pause.besked;
                     break;
@@ -62,6 +62,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
             message = "Det er weekend";
         }
 
+        //buttons code along = yellow, oplæg = purple
         document.querySelector(".Code-Along").addEventListener("click", ()=>{
             if(OplægOn === true){
                 document.querySelector(".Oplæg").classList.remove("OplægOn");
