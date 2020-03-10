@@ -28,7 +28,7 @@ nu er der kun 2 knapper på siden (oplæg og code along)
     nu starter det blå lys klokken 08:10 og starter igen efter hver pause
         fetching(46920, 84, true);
 
-    nu starter det røde lys da det er pause tid
+    nu starter det grønt lys da det er pause tid
         fetching(65535, 80, true);
 
     en af mine knapper hedder oplæg og gør lyset violet
@@ -39,9 +39,3 @@ nu er der kun 2 knapper på siden (oplæg og code along)
 
     klokken 13:30 på mandag og fredag, klokken 15:10 de andre dage og om weekenderne slukker lyset selv
         fetching(56656, 90, false);
-
-
-    hvis jeg har mere tid tilbage går jeg over listen nedenfor
-        ændrer femte knappen til at gå hurtigt over en farve array før den slukker lyset
-        
-

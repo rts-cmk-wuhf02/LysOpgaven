@@ -90,8 +90,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
             body.style.backgroundColor="#1414cc";
             fetching(46920, 84, true);
         }else if(message === "Pause"){
-            body.style.backgroundColor="#d11f0b";
-            fetching(65535, 80, true);
+            body.style.backgroundColor="#0F0";
+            fetching(26920, 80, true);
         }else{
             body.style.backgroundColor="#000";
             fetching(56656, 90, false);
@@ -109,10 +109,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                on:onOff,
                 hue:color,
-                sat:245,
-                bri:brightness
+                bri:brightness,
+                on:onOff,
+                sat:245
             })
         })
         .catch(error => console.error(error))
