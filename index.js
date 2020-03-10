@@ -50,12 +50,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
         //changes the message when you are outside school time(weekends and done for the day)
         let day = today.getDay();
-        if(day === 1 && time >= "13:30" || day === 5 && time >= "13:30" ){
+        if(day === 1 && time >= "13:30" || day === 5 && showTime >= "13:30" ){
         //1 = monday, 5 = friday
             message = "Færdig for i dag";
-            //console.log(time)
-            //console.log(day)
-        }else if(day >= 2 && day <= 4 && time >= "15:10"){
+        }else if(day > 1 && day < 5 && showTime >= "15:10"){
             message = "Færdig for i dag";
         }else if(day === 6 || day === 0){
         //6 = saturday, 0 = sunday
