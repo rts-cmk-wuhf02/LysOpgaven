@@ -1,26 +1,4 @@
-Krav til slutprojektet
-
-Når der er pause skal den være grøn.
-
-Når der er time skal det være blå.
-
-Udenfor skoletid (hvis muligt regnbuefarver ellers violet farvet)
-
-Den lytter efter tiden og ændres ved de rette tider
-
-Vi har tænkt at bruge et api til ansigtsgenkendelse, med føelelser. (ked af det) og (glad)
-
-Philips Hue API
-    https://developers.meethue.com/develop/get-started-2/
-
-Philips Hue npm pakke
-    https://www.npmjs.com/package/philips-hue-api
-
-Sider med ansigtsgenkendelse API'er
-    https://rapidapi.com/blog/top-facial-recognition-apis/
-
----------------------------------------------------------------------------------------------
-Inga
+Krav til slutprojektet - Inga
 
 nu er der kun 2 knapper på siden (oplæg og code along)
     resten kommer på de rigtige tidspunkter
@@ -37,5 +15,7 @@ nu er der kun 2 knapper på siden (oplæg og code along)
     den anden knap hedder code along og gør lyset gult
         fetching(10000, 84, true);
 
-    klokken 13:30 på mandag og fredag, klokken 15:10 de andre dage og om weekenderne slukker lyset selv
+    klokken 13:30 på mandag og fredag, klokken 15:10 de andre dage og om weekenderne går lyset igennem en farve array og efter 10 sekunder slukker lyset
         fetching(56656, 90, false);
+
+nu er jeg færdig med alle mine krav, så jeg skal finde noget andet at gøre, jeg syns face recognition være lidt for meget nu hvor jeg har kun halv anden dag til det, så jeg finder noget andet jeg kan gøre
