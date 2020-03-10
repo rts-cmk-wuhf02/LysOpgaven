@@ -41,6 +41,15 @@ button{
     cursor: pointer;
 }
 
+button::-moz-focus-inner{
+    border:0;
+}
+
+button:focus{
+    outline: none;
+    -webkit-appearance: none;
+}
+
 .Oplæg{
     background-color: #ce09d1;
 }
