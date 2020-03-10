@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", ()=>{
+    //pause array
     let pauses = [
         {pauseStart:"8:10", pauseSlut:"9:39", besked:"Skoletid"},//ikke pause
         {pauseStart:"9:40", pauseSlut:"09:59", besked:"Pause"},
@@ -9,7 +10,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
         {pauseStart:"13:40", pauseSlut:"15:10", besked:"Skoletid"}//ikke pause
     ];
 
-    let body = document.querySelector("body");
     //changes the time into one number - easier to manage
     function timeInOneNbr(hours, minutes){
         return parseInt(hours) * 60 + parseInt(minutes) 
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
     setInterval(() => {
         let today = new Date();
         let time = today.getHours() + ":" + today.getMinutes();
-        let currentTime = timeInOneNbr(today.getHours(), today.getMinutes());
+        let currentTime = timeInOneNbr(today.getHours(), today.getMinutes());        
         let message; 
 
         for (const pause of pauses) { 
@@ -45,18 +45,33 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let h = addZero(today.getHours());
         let m = addZero(today.getMinutes());
         let showTime = h + ":" + m;
+
+        //writes the correct number on the page
         document.querySelector(".currentTime").innerHTML =  "Klokken er " + showTime; 
         
 
         //changes the message when you are outside school time(weekends and done for the day)
+        //0 = sunday, 6 = saturday
+        let shortDay;
+        let lateDay;
         let day = today.getDay();
-        if(day === 1 && time >= "13:30" || day === 5 && showTime >= "13:30" ){
-        //1 = monday, 5 = friday
+        //rainbow lights
+        if(day === 1 && time === "13:30" || day === 5 && showTime === "13:30"){
+            shortDay = 1;
             message = "Færdig for i dag";
-        }else if(day > 1 && day < 5 && showTime >= "15:10"){
+        //lights off a minute later
+        }else if(day === 1 && time > "13:30" || day === 5 && showTime > "13:30"){
+            shortDay = 0;
+            message = "Færdig for i dag";
+        //rainbow lights
+        }else if(day > 1 && day < 5 && showTime === "15:10"){//1=, 1<
+            lateDay = 1;
+            message = "Færdig for i dag";
+        //lights off a minute later
+        }else if(day > 1 && day < 5 && showTime > "15:10"){
+            lateDay = 0;
             message = "Færdig for i dag";
         }else if(day === 6 || day === 0){
-        //6 = saturday, 0 = sunday
             message = "Det er weekend";
         }
 
@@ -79,7 +94,9 @@ document.addEventListener("DOMContentLoaded", ()=>{
         
         var OplægOn = document.querySelector(".Oplæg").classList.contains("OplægOn");
 
-        //tells the light what color to be based on the message
+        //tells the light and background what color to be based on the message
+        let body = document.querySelector("body");
+
         if(CodeAlongOn === true && message === "Skoletid"){
             body.style.backgroundColor="#f0c91d";
             fetching(10000, 84, true);
@@ -94,12 +111,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
             fetching(26920, 80, true);
         }else{
             body.style.backgroundColor="#000";
-            fetching(56656, 90, false);
+            if(lateDay === 1 || shortDay === 1){
+                rainbow();
+            }else{
+                fetching(56656, 0, false);
+            }
+        }
+        
+        //rainbow lights that last for 1 minute - then they turn off (because of two of the if else statements above)
+        function rainbow(){
+            let colors = [00000, 10000, 20000, 30000, 50000, 60000];
+            colors.forEach(c => {
+                fetching(c, 80, true);
+            });
         }
 
         //shows the relevant message
         document.querySelector(".message").innerHTML = message;
-    }, 500);
+    }, 1000);
 
     //----------------------------henter fra APIet------------------------------
     function fetching(color, brightness, onOff){
@@ -117,5 +146,4 @@ document.addEventListener("DOMContentLoaded", ()=>{
         })
         .catch(error => console.error(error))
     }
-
 });
