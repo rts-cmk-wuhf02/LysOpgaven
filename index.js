@@ -44,7 +44,8 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let h = addZero(today.getHours());
         let m = addZero(today.getMinutes());
         let s = addZero(today.getSeconds());
-        let showTime = h + ":" + m + ":" + s;
+        let time = h + ":" + m + ":" + s; 
+        let showTime = h + ":" + m;
 
         //writes the correct time on the page
         document.querySelector(".currentTime").innerHTML =  "Klokken er " + showTime; 
@@ -56,22 +57,24 @@ document.addEventListener("DOMContentLoaded", ()=>{
         let day = today.getDay();
 
         //rainbow lights
-        if(day === 1 && showTime > "13:30:00" && showTime < "13:30:10" || day === 5 && showTime > "13:30:00" && showTime < "13:30:10"){
+        if(time < "08:10:00"){
+            message = "Skolen er ikke begyndt"            
+        }else if(day === 1 && time > "13:30:00" && time < "13:30:10" || day === 5 && time > "13:30:00" && time < "13:30:10"){
             shortDay = 1;
             message = "Færdig for i dag";
 
         //lights off 10 seconds later
-        }else if(day === 1 && showTime > "13:30:10" || day === 5 && showTime > "13:30:10"){
+        }else if(day === 1 && time > "13:30:10" || day === 5 && time > "13:30:10"){
             shortDay = 0;
             message = "Færdig for i dag";
 
         //rainbow lights
-        }else if(day > 1 && day < 5 && showTime > "15:10:00" && showTime < "15:10:10" ){
+        }else if(day > 1 && day < 5 && time > "15:10:00" && time < "15:10:10" ){
             lateDay = 1;
             message = "Færdig for i dag";
 
         //lights off 10 seconds later
-        }else if(day > 1 && day < 5 && showTime > "15:10:10"){
+        }else if(day > 1 && day < 5 && time > "15:10:10"){
             lateDay = 0;
             message = "Færdig for i dag";
 
