@@ -17,3 +17,10 @@ nu er der kun 2 knapper på siden (oplæg og code along)
 
     klokken 13:30 på mandag og fredag, klokken 15:10 de andre dage og om weekenderne går lyset igennem en farve array og efter 10 sekunder slukker lyset
         fetching(56656, 90, false);
+
+
+Her kommer en liste af de sider jeg brugte 
+    https://developers.meethue.com/develop/get-started-2/ 
+
+   debugging tool - her lavede jeg get for at lære denne api at kende og finde midt lys
+       https://192.168.8.100/api/90pkxK64tycrPfvs7qn0n-mgoLHMG9hm0W6QY54G/lights/12
